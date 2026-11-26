@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Md. Asiqul Islam</title>
+<meta name="description" content="Md. Asiqul Islam, polymer and materials researcher. Polymer composite membranes and antibacterial films for water treatment and carbon capture. Applying for PhD programs in the USA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a CV-style page. Each section has a small mono label on the left and its content on the right; it stacks on phones. */
+:root {
+  --bg: #f5f8f9;
+  --surface: #ffffff;
+  --fg: #11212a;
+  --muted: #4d616b;
+  --line: #d3e0e4;
+  --accent: #0a6c78;
+  --accent-soft: #dcf0f2;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0c181e; --surface: #12232b; --fg: #e5eef1; --muted: #9db2bb;
+    --line: #25404a; --accent: #5cc6d2; --accent-soft: #123740; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0c181e; --surface: #12232b; --fg: #e5eef1; --muted: #9db2bb;
+  --line: #25404a; --accent: #5cc6d2; --accent-soft: #123740; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  padding-block: 0 3rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.wrap { max-width: 62rem; margin: 0 auto; }
+
+/* Top bar */
+.topbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .5rem 1.5rem; padding-block: 1.25rem; border-bottom: 1px solid var(--line); }
+.mark { font-weight: 600; letter-spacing: .01em; color: var(--fg); text-decoration: none; }
+.nav { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; font-family: var(--font-mono); font-size: .8125rem; }
+.nav a { color: var(--muted); text-decoration: none; }
+.nav a:hover { color: var(--accent); }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 2.5rem; align-items: center; padding-block: 3.5rem 3rem; border-bottom: 1px solid var(--line); }
+.eyebrow { font-family: var(--font-mono); font-size: .8125rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 0 0 1rem; }
+h1 { font-size: clamp(2.25rem, 6vw, 3.5rem); line-height: 1.08; letter-spacing: -.02em; font-weight: 600; margin: 0 0 1rem; text-wrap: balance; }
+.lede { font-size: 1.1875rem; color: var(--fg); margin: 0 0 1.25rem; max-width: 34rem; text-wrap: pretty; }
+.affil { color: var(--muted); margin: 0 0 1.75rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.btn { display: inline-block; padding: .6rem 1.1rem; border-radius: 4px; border: 1px solid var(--accent); text-decoration: none; font-weight: 500; font-size: .9375rem; }
+.btn.primary { background: var(--accent); color: var(--bg); }
+.btn.ghost { color: var(--accent); }
+.btn:hover { filter: brightness(1.08); }
+.film { width: 100%; height: auto; max-width: 100%; }
+.film-caption { font-family: var(--font-mono); font-size: .75rem; color: var(--muted); margin: .5rem 0 0; }
+
+/* Sections */
+section { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 1rem 2.5rem; padding-block: 2.5rem; border-bottom: 1px solid var(--line); scroll-margin-top: 1rem; }
+section:last-of-type { border-bottom: 0; }
+.label { font-family: var(--font-mono); font-size: .8125rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: .35rem 0 0; font-weight: 500; }
+h2 { margin: 0; font-size: 1rem; }
+.content { min-width: 0; }
+.content p { margin: 0 0 1rem; max-width: 40rem; text-wrap: pretty; }
+.content p:last-child { margin-bottom: 0; }
+h3 { font-size: 1.125rem; line-height: 1.35; margin: 0 0 .25rem; font-weight: 600; }
+.meta { color: var(--muted); font-size: .9375rem; margin: 0 0 .75rem; }
+.entry { margin-bottom: 2rem; }
+.entry:last-child { margin-bottom: 0; }
+ul.plain { margin: 0; padding-left: 1.1rem; max-width: 40rem; }
+ul.plain li { margin-bottom: .5rem; }
+
+.tags { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; margin: 0; }
+.tags li { font-family: var(--font-mono); font-size: .8125rem; padding: .2rem .6rem; border-radius: 3px; background: var(--accent-soft); color: var(--fg); }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 1.5rem; }
+.status { display: inline-block; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); border-radius: 3px; padding: .1rem .5rem; margin-bottom: .75rem; }
+
+.flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
+.flow li { border-top: 2px solid var(--accent); padding-top: .6rem; font-size: .9375rem; }
+.flow strong { display: block; font-weight: 600; margin-bottom: .15rem; }
+.flow span { color: var(--muted); }
+
+dl.facts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .4rem 1.5rem; margin: 0; }
+dl.facts dt { color: var(--muted); }
+dl.facts dd { margin: 0; }
+
+.talk { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: .25rem 1.5rem; margin-bottom: 1.75rem; }
+.talk:last-child { margin-bottom: 0; }
+.when { font-family: var(--font-mono); font-size: .8125rem; color: var(--muted); padding-top: .2rem; }
+.kind { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+
+.contact-line { font-size: 1.1875rem; margin: 0 0 .5rem; overflow-wrap: anywhere; }
+
+footer { padding-top: 1.5rem; color: var(--muted); font-size: .875rem; font-family: var(--font-mono); }
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: minmax(0, 1fr); padding-block: 2.5rem 2rem; gap: 2rem; }
+  section { grid-template-columns: minmax(0, 1fr); gap: .5rem; padding-block: 2rem; }
+  .label { margin-top: 0; }
+  .flow { grid-template-columns: minmax(0, 1fr); }
+  .talk { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="topbar">
+  <a class="mark" href="#top">Md. Asiqul Islam</a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#talks">Presentations</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div>
+    <p class="eyebrow">Polymer and materials research</p>
+    <h1>Md. Asiqul Islam</h1>
+    <p class="lede">I develop polymer composite membranes and antibacterial films for water treatment, and I study materials for carbon capture.</p>
+    <p class="affil">Research Assistant, Polymer and Textile Research Laboratory, University of Rajshahi, Bangladesh. BSc Engineering in Applied Chemistry and Chemical Engineering. Applying for PhD programs in materials science in the United States.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:mdasiqul.ma@gmail.com">Email me</a>
+      <a class="btn ghost" href="#research">Current research</a>
+    </div>
+  </div>
+  <figure style="margin:0">
+    <svg class="film" viewBox="0 0 360 230" role="img" aria-label="Diagram of a thin polymer film with nanoparticles dispersed through it, with water flowing across it">
+      <rect x="20" y="70" width="320" height="64" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+      <g fill="var(--accent)">
+        <circle cx="48" cy="92" r="4"/><circle cx="82" cy="115" r="3"/><circle cx="112" cy="88" r="4.5"/>
+        <circle cx="146" cy="112" r="3"/><circle cx="178" cy="90" r="4"/><circle cx="212" cy="116" r="4.5"/>
+        <circle cx="244" cy="94" r="3"/><circle cx="276" cy="112" r="4"/><circle cx="308" cy="90" r="3.5"/>
+        <circle cx="64" cy="122" r="2.5"/><circle cx="132" cy="100" r="2.5"/><circle cx="196" cy="102" r="2.5"/><circle cx="262" cy="104" r="2.5"/>
+      </g>
+      <g fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-linecap="round">
+        <path d="M40 40 q20 -14 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
+        <path d="M40 182 q20 -14 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0" stroke-dasharray="2 6"/>
+      </g>
+      <g font-family="IBM Plex Mono, ui-monospace, monospace" font-size="11" fill="var(--muted)">
+        <text x="20" y="22">contaminated water</text>
+        <text x="20" y="212">filtered water</text>
+        <text x="236" y="156" fill="var(--accent)">nano-Ni / carbon filler</text>
+        <text x="24" y="60">PVA / chitosan matrix</text>
+      </g>
+    </svg>
+    <figcaption class="film-caption">Schematic: filler dispersed in a PVA/chitosan film</figcaption>
+  </figure>
+</div>
+
+<section id="about">
+  <h2 class="label">About</h2>
+  <div class="content">
+    <p>I am a chemical engineering graduate from the University of Rajshahi. I work as a Research Assistant in the Polymer and Textile Research Laboratory, where I make and test polymer-based materials for environmental use.</p>
+    <p>My interests are polymer science, nanomaterials, sustainable materials and advanced polymer composites. I like the full cycle of materials work: synthesis, characterization and performance testing.</p>
+    <p>My long-term goal is to do advanced research in materials science and build sustainable solutions to environmental and technological problems. I want to grow as a researcher through collaborative, interdisciplinary projects.</p>
+  </div>
+</section>
+
+<section id="research">
+  <h2 class="label">Research</h2>
+  <div class="content">
+    <div class="entry panel">
+      <span class="status">In progress</span>
+      <h3>Antibacterial polymer films for water filtration</h3>
+      <p class="meta">Polymer and Textile Research Laboratory, University of Rajshahi</p>
+      <p>I am developing antibacterial films for potential use in water filtration. The work covers PVA/chitosan-based composite membranes with nano-Ni and carbon-based materials, and bio-based chitosan membranes loaded with neem oil. The aim is a stable film that interacts well with water and resists bacteria.</p>
+      <ul class="plain">
+        <li>Optimizing composition and conditions to improve membrane stability, water interaction and function.</li>
+        <li>Linking structure to properties through characterization and performance tests.</li>
+      </ul>
+      <ol class="flow">
+        <li><strong>Make</strong><span>Polymer solutions and solution-cast composite films</span></li>
+        <li><strong>Characterize</strong><span>FTIR, XRD, FESEM, UV-Vis, TGA</span></li>
+        <li><strong>Test</strong><span>Swelling, water solubility, contact angle, antibacterial and photocatalytic activity</span></li>
+      </ol>
+    </div>
+    <div class="entry">
+      <h3>Carbon capture technologies review</h3>
+      <p class="meta">Project supervised by Md. Hasinur Rahman, Lecturer, Department of Applied Chemistry and Chemical Engineering</p>
+      <p>A comprehensive review of recent advances in major carbon capture technologies. It grew into conference work on choosing an optimum adsorbent for effective decarbonization.</p>
+    </div>
+    <div class="entry">
+      <h3>Research interests</h3>
+      <ul class="tags">
+        <li>Polymer composites</li><li>Nanomaterials</li><li>Sustainable materials</li>
+        <li>Membranes</li><li>Wastewater treatment</li><li>Carbon capture</li><li>Green hydrogen</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2 class="label">Experience</h2>
+  <div class="content">
+    <div class="entry">
+      <h3>University Research Assistant</h3>
+      <p class="meta">University of Rajshahi, Rajshahi, Bangladesh. Current.</p>
+      <ul class="plain">
+        <li>Research on polymer-based composite membranes and functional materials for wastewater treatment and other environmental uses.</li>
+        <li>Developing and optimizing PVA/chitosan composite membranes with nano-Ni and carbon-based materials.</li>
+        <li>Studying structure-property relationships with FTIR, XRD, FESEM, UV-Vis, TGA, swelling, water-solubility, contact-angle, antibacterial and photocatalytic analyses.</li>
+        <li>Planning experiments, preparing samples, analyzing data and interpreting results under faculty supervision.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <h2 class="label">Education and training</h2>
+  <div class="content">
+    <div class="entry">
+      <h3>BSc Engineering in Applied Chemistry and Chemical Engineering</h3>
+      <p class="meta">University of Rajshahi, Bangladesh. January 2020 to May 2026. CGPA 3.59 (160 credits).</p>
+      <p>Coursework includes physical, organic and inorganic chemistry, instrumental analysis, thermodynamics, heat and mass transfer, reaction engineering, unit operations and process control, polymers and textiles, environmental chemistry, corrosion engineering, and plant design and process analysis.</p>
+    </div>
+    <div class="entry">
+      <h3>Process Simulation Using AspenONE</h3>
+      <p class="meta">Training Institute for Chemical Industries (TICI), Narsingdi. March 2026.</p>
+    </div>
+    <div class="entry">
+      <h3>Industrial Process Unit Operation and Process Control Technique</h3>
+      <p class="meta">Training Institute for Chemical Industries (TICI), Narsingdi. January to March 2026. Grade A+.</p>
+    </div>
+    <div class="entry">
+      <h3>FESEM, GC-MS, FTIR, UV-Vis NIR and Particle Size Analyzer</h3>
+      <p class="meta">BCSIR Rajshahi Laboratories. December 2025.</p>
+    </div>
+  </div>
+</section>
+
+<section id="talks">
+  <h2 class="label">Presentations</h2>
+  <div class="content">
+    <div class="talk">
+      <div class="when">14 Nov 2026<br>Dhaka</div>
+      <div>
+        <span class="kind">Oral presentation</span>
+        <h3>Bio-based neem oil-loaded chitosan biocomposite membrane for potential antibacterial water filter application</h3>
+        <p class="meta">42nd Annual Conference of the Bangladesh Chemical Society</p>
+      </div>
+    </div>
+    <div class="talk">
+      <div class="when">14-15 Nov 2025<br>Rajshahi</div>
+      <div>
+        <span class="kind">Poster presentation</span>
+        <h3>Green Hydrogen for Sustainable Future Energy: A pathway towards a Carbon-Free World</h3>
+        <p class="meta">2nd International Conference on Recent Advances in Science and Technology (ICRAST). <a href="https://doi.org/10.13140/RG.2.2.31994.15040">DOI link</a></p>
+      </div>
+    </div>
+    <div class="talk">
+      <div class="when">6-7 Sep 2025<br>Rajshahi</div>
+      <div>
+        <span class="kind">Oral presentation</span>
+        <h3>An Inquiry into the emerging carbon capture technologies and associated challenges toward the identification of optimum adsorbent for effective decarbonization</h3>
+        <p class="meta">RUEC 1st International Research Conference</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2 class="label">Skills</h2>
+  <div class="content">
+    <div class="entry">
+      <h3>Laboratory</h3>
+      <ul class="tags">
+        <li>Polymer solution preparation</li><li>Solution casting of composite membranes</li>
+        <li>Muffle furnace</li><li>UV-Vis spectrophotometer</li><li>Ultrasonicator</li>
+        <li>Mechanical shaker</li><li>Sieve machine</li><li>pH meter</li><li>Centrifuge</li><li>Dryer</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <h3>Characterization</h3>
+      <ul class="tags">
+        <li>FTIR</li><li>XRD</li><li>FESEM</li><li>UV-Vis</li><li>TGA</li><li>GC-MS</li><li>Particle size analysis</li><li>Contact angle</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <h3>Software</h3>
+      <ul class="tags">
+        <li>OriginLab</li><li>AspenONE</li><li>Microsoft Word, Excel, PowerPoint</li><li>Google Drive</li><li>Python (basic)</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <h3>Languages</h3>
+      <dl class="facts">
+        <dt>Bengali</dt><dd>Native</dd>
+        <dt>English</dt><dd>C1 listening, reading and writing. B2 speaking.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="reference">
+  <h2 class="label">Academic reference</h2>
+  <div class="content">
+    <h3>Md. Hasinur Rahman</h3>
+    <p class="meta">Lecturer, Department of Applied Chemistry and Chemical Engineering, University of Rajshahi, Rajshahi-6205, Bangladesh</p>
+    <p><a href="https://profile.ru.ac.bd/public/profile/07360">University profile</a></p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="label">Contact</h2>
+  <div class="content">
+    <p class="contact-line"><a href="mailto:mdasiqul.ma@gmail.com">mdasiqul.ma@gmail.com</a></p>
+    <p class="meta">I welcome messages from prospective advisors and research groups working on polymers, membranes, nanomaterials and sustainable materials.</p>
+  </div>
+</section>
+</main>
+
+<footer>Last updated November 2026</footer>
+</div>
+</body>
+</html>
